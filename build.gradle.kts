@@ -16,7 +16,6 @@ repositories {
 dependencies {
 
     compileOnly("org.wso2.carbon.identity.framework:org.wso2.carbon.identity.event:7.0.110")
-    compileOnly("org.apache.felix:org.apache.felix.scr.ds-annotations:1.2.10")
     compileOnly("org.osgi:org.osgi.service.component.annotations:1.4.0")
 }
 
@@ -31,8 +30,7 @@ tasks.jar {
             "Import-Package" to "org.osgi.framework; version=\"[1.7.0, 2.0.0)\", org.osgi.service.component; version=\"[1.2.0, 2.0.0)\"",
             "-removeheaders" to "Require-Capability",
             "DynamicImport-Package" to "*",
-            "-dsannotations" to "",
-            "Service-Component" to "OSGI-INF/*.xml"
+            "-dsannotations-options" to "version;minimum=1.1.0;maximum=1.2.0",
 
         )
     }
